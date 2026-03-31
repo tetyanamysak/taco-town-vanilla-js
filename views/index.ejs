@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Taco Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+  <div class="app-container">
+  <h1>🌮 Taco Town 🌮</h1>
+
+  <div class="ingredient-buttons">
+    <button data-choice="chicken">🍗</button>
+<button data-choice="beef">🥩</button>
+<button data-choice="fish">🐟</button>
+  </div>
+
+  <div id="recipeContainer">
+    <% if (recipe) { %>
+    <h2 id="recipeTitle">
+        <%= recipe.name %>
+      </h2>
+
+    <button id="ingredientsButton" onclick="showIngredients()">Show Ingredients</button>
+    <div id="overlay">
+    <div id="ingredientsDiv">
+    <ul id="ingredientsList">
+      <li>
+        <%= recipe.ingredients.protein.name %>, <%= recipe.ingredients.protein.preparation %>
+      </li>
+      <li>
+        <%= recipe.ingredients.salsa.name %>
+      </li>
+      <% recipe.ingredients.toppings.forEach(topping=> { %>
+        <li>
+          <%= topping.quantity %> of <%= topping.name %>
+        </li>
+        <% }) %>
+    </ul>
+     </div>
+     </div>
+ <% } else { %>
+      <h2 class="pick_your_fav">👆 Pick your favourite taco ingredient 👆</h2>
+    <% } %>
+ </div>
+
+  </div>
+
+  <form action="/" method="GET">
+  <button type="submit" id="returnToHomepage" <%= recipe ? "" : "disabled" %>> Return to homepage </button>
+</form>
+
+  <script src="/script.js"></script>
+
+</body>
+
+</html>

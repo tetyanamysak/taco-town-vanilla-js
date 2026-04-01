@@ -1,5 +1,7 @@
 # 🌮 Taco Town Vanilla JS
 
+![Main Screen](./images/main.png)
+
 Welcome to **Taco Town**, a dynamic web application for exploring delicious taco recipes!
 This project demonstrates a full-stack flow using Node.js, Express, and EJS, with a strong focus on interactive UI/UX using Vanilla JavaScript and modern CSS.
 
@@ -75,5 +77,4 @@ Custom SVG background pattern for visual texture
 This project is open source and free to use.
 
 Created with ❤️ by Tetyana.
-
-
+```
